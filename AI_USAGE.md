@@ -675,3 +675,78 @@ Archivos incorporados:
 Verificación: Sintaxis de los 12 módulos JavaScript del backend comprobada con node --check; 32 importaciones relativas resueltas. Las 19 pruebas de utilidades y medios ya aprobadas siguen correspondiendo a archivos sin modificaciones. No se inicia el servidor con las credenciales locales ni se ejecutan pagos; quedan pendientes autorización real, HTTP de punta a punta y pruebas HCE en hardware. Las pruebas JVM del protocolo quedan pendientes por falta de toolchain.
 
 Commit: consultar el historial local por los archivos de esta unidad. Sin push.
+
+### ETAPA-5 — Aplicación Android e interfaz final
+
+Aplicación Android completa, lector NFC, servicio HCE, cuentas, modos Pagar/Cobrar, historial, gráficas, idiomas, voz, recursos y configuración Gradle. Se agrupan para conservar las dependencias entre la lógica y la interfaz existentes. Incluye contexto, informe de arquitectura y notas técnicas locales.
+
+Archivos incorporados:
+
+- [NFC/CONTEXTO_APP.md](<NFC/CONTEXTO_APP.md>)
+- [NFC/app/.gitignore](<NFC/app/.gitignore>)
+- [NFC/app/build.gradle.kts](<NFC/app/build.gradle.kts>)
+- [NFC/app/src/androidTest/java/com/example/nfc/ExampleInstrumentedTest.kt](<NFC/app/src/androidTest/java/com/example/nfc/ExampleInstrumentedTest.kt>)
+- [NFC/app/src/main/AndroidManifest.xml](<NFC/app/src/main/AndroidManifest.xml>)
+- [NFC/app/src/main/java/com/example/nfc/Componentes.kt](<NFC/app/src/main/java/com/example/nfc/Componentes.kt>)
+- [NFC/app/src/main/java/com/example/nfc/Entorno.kt](<NFC/app/src/main/java/com/example/nfc/Entorno.kt>)
+- [NFC/app/src/main/java/com/example/nfc/Estado.kt](<NFC/app/src/main/java/com/example/nfc/Estado.kt>)
+- [NFC/app/src/main/java/com/example/nfc/Grafica.kt](<NFC/app/src/main/java/com/example/nfc/Grafica.kt>)
+- [NFC/app/src/main/java/com/example/nfc/Iconos.kt](<NFC/app/src/main/java/com/example/nfc/Iconos.kt>)
+- [NFC/app/src/main/java/com/example/nfc/MainActivity.kt](<NFC/app/src/main/java/com/example/nfc/MainActivity.kt>)
+- [NFC/app/src/main/java/com/example/nfc/ModoCobrar.kt](<NFC/app/src/main/java/com/example/nfc/ModoCobrar.kt>)
+- [NFC/app/src/main/java/com/example/nfc/ModoPagar.kt](<NFC/app/src/main/java/com/example/nfc/ModoPagar.kt>)
+- [NFC/app/src/main/java/com/example/nfc/NfcLectorEscritor.kt](<NFC/app/src/main/java/com/example/nfc/NfcLectorEscritor.kt>)
+- [NFC/app/src/main/java/com/example/nfc/PagoHceService.kt](<NFC/app/src/main/java/com/example/nfc/PagoHceService.kt>)
+- [NFC/app/src/main/java/com/example/nfc/PestanaHistorial.kt](<NFC/app/src/main/java/com/example/nfc/PestanaHistorial.kt>)
+- [NFC/app/src/main/java/com/example/nfc/ServidorApi.kt](<NFC/app/src/main/java/com/example/nfc/ServidorApi.kt>)
+- [NFC/app/src/main/java/com/example/nfc/Textos.kt](<NFC/app/src/main/java/com/example/nfc/Textos.kt>)
+- [NFC/app/src/main/java/com/example/nfc/Ventas.kt](<NFC/app/src/main/java/com/example/nfc/Ventas.kt>)
+- [NFC/app/src/main/java/com/example/nfc/VozFemenina.kt](<NFC/app/src/main/java/com/example/nfc/VozFemenina.kt>)
+- [NFC/app/src/main/java/com/example/nfc/ui/theme/Color.kt](<NFC/app/src/main/java/com/example/nfc/ui/theme/Color.kt>)
+- [NFC/app/src/main/java/com/example/nfc/ui/theme/Theme.kt](<NFC/app/src/main/java/com/example/nfc/ui/theme/Theme.kt>)
+- [NFC/app/src/main/java/com/example/nfc/ui/theme/Type.kt](<NFC/app/src/main/java/com/example/nfc/ui/theme/Type.kt>)
+- [NFC/app/src/main/keepRules/rules.keep](<NFC/app/src/main/keepRules/rules.keep>)
+- [NFC/app/src/main/res/drawable/ic_launcher_background.xml](<NFC/app/src/main/res/drawable/ic_launcher_background.xml>)
+- [NFC/app/src/main/res/drawable/ic_launcher_foreground.xml](<NFC/app/src/main/res/drawable/ic_launcher_foreground.xml>)
+- [NFC/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml](<NFC/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml>)
+- [NFC/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml](<NFC/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml>)
+- [NFC/app/src/main/res/mipmap-hdpi/ic_launcher.webp](<NFC/app/src/main/res/mipmap-hdpi/ic_launcher.webp>)
+- [NFC/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp](<NFC/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp>)
+- [NFC/app/src/main/res/mipmap-mdpi/ic_launcher.webp](<NFC/app/src/main/res/mipmap-mdpi/ic_launcher.webp>)
+- [NFC/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp](<NFC/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp>)
+- [NFC/app/src/main/res/mipmap-xhdpi/ic_launcher.webp](<NFC/app/src/main/res/mipmap-xhdpi/ic_launcher.webp>)
+- [NFC/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp](<NFC/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp>)
+- [NFC/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp](<NFC/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp>)
+- [NFC/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp](<NFC/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp>)
+- [NFC/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp](<NFC/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp>)
+- [NFC/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp](<NFC/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp>)
+- [NFC/app/src/main/res/values/colors.xml](<NFC/app/src/main/res/values/colors.xml>)
+- [NFC/app/src/main/res/values/strings.xml](<NFC/app/src/main/res/values/strings.xml>)
+- [NFC/app/src/main/res/values/themes.xml](<NFC/app/src/main/res/values/themes.xml>)
+- [NFC/app/src/main/res/xml/apduservice.xml](<NFC/app/src/main/res/xml/apduservice.xml>)
+- [NFC/app/src/main/res/xml/backup_rules.xml](<NFC/app/src/main/res/xml/backup_rules.xml>)
+- [NFC/app/src/main/res/xml/data_extraction_rules.xml](<NFC/app/src/main/res/xml/data_extraction_rules.xml>)
+- [NFC/app/src/main/res/xml/network_security_config.xml](<NFC/app/src/main/res/xml/network_security_config.xml>)
+- [NFC/app/src/test/java/com/example/nfc/ExampleUnitTest.kt](<NFC/app/src/test/java/com/example/nfc/ExampleUnitTest.kt>)
+- [NFC/app/src/test/java/com/example/nfc/VentasTest.kt](<NFC/app/src/test/java/com/example/nfc/VentasTest.kt>)
+- [NFC/app/src/test/java/com/example/nfc/VozFemeninaTest.kt](<NFC/app/src/test/java/com/example/nfc/VozFemeninaTest.kt>)
+- [NFC/build.gradle.kts](<NFC/build.gradle.kts>)
+- [NFC/gradle.properties](<NFC/gradle.properties>)
+- [NFC/gradle/gradle-daemon-jvm.properties](<NFC/gradle/gradle-daemon-jvm.properties>)
+- [NFC/gradle/libs.versions.toml](<NFC/gradle/libs.versions.toml>)
+- [NFC/gradle/wrapper/gradle-wrapper.jar](<NFC/gradle/wrapper/gradle-wrapper.jar>)
+- [NFC/gradle/wrapper/gradle-wrapper.properties](<NFC/gradle/wrapper/gradle-wrapper.properties>)
+- [NFC/gradlew](<NFC/gradlew>)
+- [NFC/gradlew.bat](<NFC/gradlew.bat>)
+- [NFC/reports/Arquitectura Open Payments Pago al Toque.md](<NFC/reports/Arquitectura Open Payments Pago al Toque.md>)
+- [NFC/research_notes/Arquitectura Open Payments Pago al Toque/arquitectura_actores.md](<NFC/research_notes/Arquitectura Open Payments Pago al Toque/arquitectura_actores.md>)
+- [NFC/research_notes/Arquitectura Open Payments Pago al Toque/flujo_pagos.md](<NFC/research_notes/Arquitectura Open Payments Pago al Toque/flujo_pagos.md>)
+- [NFC/research_notes/Arquitectura Open Payments Pago al Toque/grants_gnap.md](<NFC/research_notes/Arquitectura Open Payments Pago al Toque/grants_gnap.md>)
+- [NFC/settings.gradle.kts](<NFC/settings.gradle.kts>)
+- [prompts/Etapa-5/prompt-6.md](<prompts/Etapa-5/prompt-6.md>)
+
+Verificación: Parseo XML aprobado para 12 archivos de manifiesto y recursos. Se comparan hashes SHA-256 de los 86 archivos existentes seleccionados: permanecen idénticos al estado inicial. No se compila ni se ejecutan pruebas Android: faltan SDK Android, compilador Kotlin y caché Gradle en las ubicaciones consultadas. Quedan pendientes instalación, NFC físico, voz, comparación con Figma y recorrido de pagos reales. No se declara que las funciones descritas por los prompts estén todas verificadas.
+
+Commit: consultar el historial local por los archivos de esta unidad. Sin push.
+
+Revisión de formato: el chequeo estándar señala finales CRLF en los archivos Gradle de Windows y una línea vacía final en libs.versions.toml. Se conservan los archivos originales; al reconocer CRLF solo queda esa observación cosmética. No afecta a la sintaxis ni constituye una prueba de compilación.
