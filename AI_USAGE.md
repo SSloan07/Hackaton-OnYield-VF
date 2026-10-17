@@ -616,4 +616,30 @@ Archivos incorporados:
 
 Verificación: Revisión de dependencias: NdefUtil.kt y NdefUtilTest.kt forman una unidad de lógica JVM; 10 métodos @Test presentes. No se ejecutan pruebas Kotlin: no hay compilador Kotlin, SDK Android ni caché Gradle en las ubicaciones locales consultadas. No se prueba NFC físico.
 
-Commit: identificable por `ETAPA-1` en el historial local. Sin push.
+Commit: `chore(nfc): incorpora utilidades NDEF y pruebas de viabilidad`. Sin push.
+
+### ETAPA-2 — Base del datáfono y Open Payments
+
+Configuración, SDK, montos y persistencia. medios.mjs y sus pruebas se incluyen aquí porque datos.mjs importa su migración; contienen también lógica de cuentas e historial de la etapa 4. El servidor ejecutable se incorpora en la etapa 4. MontoUtil es una utilidad Kotlin independiente.
+
+Archivos incorporados:
+
+- [NFC/servidor/.gitignore](<NFC/servidor/.gitignore>)
+- [NFC/servidor/.env.example](<NFC/servidor/.env.example>)
+- [NFC/servidor/package.json](<NFC/servidor/package.json>)
+- [NFC/servidor/package-lock.json](<NFC/servidor/package-lock.json>)
+- [NFC/servidor/config.mjs](<NFC/servidor/config.mjs>)
+- [NFC/servidor/util.mjs](<NFC/servidor/util.mjs>)
+- [NFC/servidor/util.test.mjs](<NFC/servidor/util.test.mjs>)
+- [NFC/servidor/op.mjs](<NFC/servidor/op.mjs>)
+- [NFC/servidor/datos.mjs](<NFC/servidor/datos.mjs>)
+- [NFC/servidor/medios.mjs](<NFC/servidor/medios.mjs>)
+- [NFC/servidor/medios.test.mjs](<NFC/servidor/medios.test.mjs>)
+- [NFC/servidor/probar.mjs](<NFC/servidor/probar.mjs>)
+- [NFC/app/src/main/java/com/example/nfc/MontoUtil.kt](<NFC/app/src/main/java/com/example/nfc/MontoUtil.kt>)
+- [NFC/app/src/test/java/com/example/nfc/MontoUtilTest.kt](<NFC/app/src/test/java/com/example/nfc/MontoUtilTest.kt>)
+- [prompts/Etapa-2/prompt-2.md](<prompts/Etapa-2/prompt-2.md>)
+
+Verificación: 19 pruebas Node aprobadas: 5 en util.test.mjs y 14 en medios.test.mjs. Comprobación de sintaxis con node --check aprobada para los módulos JavaScript de esta etapa. Las pruebas Kotlin de montos quedan pendientes por falta de toolchain. No se ejecuta probar.mjs: requiere credenciales y llamadas al test wallet; no se han verificado pagos reales.
+
+Commit: `chore(backend): incorpora base Open Payments y montos`. Sin push.
