@@ -656,3 +656,22 @@ Archivos incorporados:
 Verificación: Siete comprobaciones del HTML generado aprobadas con node:assert/strict: formulario hacia /familiar/completar, campo URL obligatorio, botón de copia, escape del enlace, escape del nombre del cliente, estado vacío y escape de mensajes. No se ejecuta navegador ni se valida una autorización remota real.
 
 Commit: consultar el historial local por los archivos de esta unidad. Sin push.
+
+### ETAPA-4 — Billetera, cuentas y servidor integrado
+
+Servidor HTTP completo, permisos y rutas de billetera, con sus dependencias ya incorporadas. Incluye el protocolo HCE puro y sus pruebas. La integración Android de los modos se conserva completa con la interfaz final en la etapa 5.
+
+Archivos incorporados:
+
+- [NFC/servidor/permisos.mjs](<NFC/servidor/permisos.mjs>)
+- [NFC/servidor/billetera.mjs](<NFC/servidor/billetera.mjs>)
+- [NFC/servidor/servidor.mjs](<NFC/servidor/servidor.mjs>)
+- [NFC/app/src/main/java/com/example/nfc/ProtocoloHce.kt](<NFC/app/src/main/java/com/example/nfc/ProtocoloHce.kt>)
+- [NFC/app/src/test/java/com/example/nfc/ProtocoloHceTest.kt](<NFC/app/src/test/java/com/example/nfc/ProtocoloHceTest.kt>)
+- [NFC/PRUEBA_DATAFONO.md](<NFC/PRUEBA_DATAFONO.md>)
+- [prompts/Etapa-4/prompt-4.md](<prompts/Etapa-4/prompt-4.md>)
+- [prompts/Etapa-4/prompt-5.md](<prompts/Etapa-4/prompt-5.md>)
+
+Verificación: Sintaxis de los 12 módulos JavaScript del backend comprobada con node --check; 32 importaciones relativas resueltas. Las 19 pruebas de utilidades y medios ya aprobadas siguen correspondiendo a archivos sin modificaciones. No se inicia el servidor con las credenciales locales ni se ejecutan pagos; quedan pendientes autorización real, HTTP de punta a punta y pruebas HCE en hardware. Las pruebas JVM del protocolo quedan pendientes por falta de toolchain.
+
+Commit: consultar el historial local por los archivos de esta unidad. Sin push.
