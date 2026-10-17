@@ -643,3 +643,16 @@ Archivos incorporados:
 Verificación: 19 pruebas Node aprobadas: 5 en util.test.mjs y 14 en medios.test.mjs. Comprobación de sintaxis con node --check aprobada para los módulos JavaScript de esta etapa. Las pruebas Kotlin de montos quedan pendientes por falta de toolchain. No se ejecuta probar.mjs: requiere credenciales y llamadas al test wallet; no se han verificado pagos reales.
 
 Commit: `chore(backend): incorpora base Open Payments y montos`. Sin push.
+
+### ETAPA-3 — Aprobación remota del permiso
+
+Plantillas de la página del familiar, enlace copiable y formulario de retorno remoto. Las rutas /familiar/aprobar, /familiar/callback y /familiar/completar comparten servidor.mjs con cuentas y cobros: se incorporan juntas en la etapa 4. Esta etapa permite verificar el HTML generado, no completar una autorización real.
+
+Archivos incorporados:
+
+- [NFC/servidor/paginas.mjs](<NFC/servidor/paginas.mjs>)
+- [prompts/Etapa-3/prompt-3.md](<prompts/Etapa-3/prompt-3.md>)
+
+Verificación: Siete comprobaciones del HTML generado aprobadas con node:assert/strict: formulario hacia /familiar/completar, campo URL obligatorio, botón de copia, escape del enlace, escape del nombre del cliente, estado vacío y escape de mensajes. No se ejecuta navegador ni se valida una autorización remota real.
+
+Commit: consultar el historial local por los archivos de esta unidad. Sin push.
